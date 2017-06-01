@@ -1,6 +1,6 @@
 {
   "name": "run-in-vm",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "run node code in vm with bundled json file which includes all entry and chunk files",
   "main": "index.js",
   "repository": "https://github.com/JounQin/run-in-vm.git",

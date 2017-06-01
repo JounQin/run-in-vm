@@ -105,7 +105,7 @@ try {
   }
 }
 
-function createBundleRunner(entry, files, basedir, runInNewContext, CONTEXT_KEY = DEFAULT_CONTEXT_KEY) {
+function createBundleRunner(entry, files, basedir, runInNewContext, CONTEXT_KEY) {
   const evaluate = compileModule(files, basedir, runInNewContext)
   if (runInNewContext !== false && runInNewContext !== 'once') {
     // new context mode: creates a fresh context and re-evaluate the bundle
@@ -152,4 +152,5 @@ function createBundleRunner(entry, files, basedir, runInNewContext, CONTEXT_KEY 
   }
 }
 
-module.exports = ({bundle: {entry, files}, basedir, runInNewContext}) => createBundleRunner(entry, files, basedir, runInNewContext)
+module.exports = ({bundle: {entry, files}, basedir, runInNewContext}, CONTEXT_KEY = DEFAULT_CONTEXT_KEY) =>
+  createBundleRunner(entry, files, basedir, runInNewContext, CONTEXT_KEY)
