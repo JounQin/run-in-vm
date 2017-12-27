@@ -99,7 +99,9 @@ try {
   try {
     require('vue-style-loader')
     DEFAULT_CONTEXT_KEY = '__VUE_SSR_CONTEXT__'
-  } catch (e) {}
+  } catch (e) {
+    DEFAULT_CONTEXT_KEY = '__SSR_CONTEXT__'
+  }
 }
 
 function createBundleRunner(
